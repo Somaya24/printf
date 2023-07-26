@@ -3,7 +3,12 @@
 #include <stdio.h>
 #include "main.h"
 
-
+/**
+* @count : numbers of char printed
+* _printf - _printf function
+* @format : Format
+* Return: char printed.
+*/
 int _printf(const char *format, ...)
 {
 	int count = 0;
