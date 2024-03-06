@@ -6,12 +6,12 @@ int _printf(const char *format, ...)
 	va_list ap;
 
 	va_start(ap, format);
-	while(*format)
+	while (*format)
 	{
-		if(*format == '%')
+		if (*format == '%')
 		{
 			format++;
-			if(*format == '%')
+			if (*format == '%')
 			{
 				_putchar('%');
 				counter++;
@@ -22,14 +22,14 @@ int _printf(const char *format, ...)
 					ch = va_arg(ap, int);
 					_putchar(ch);
 					counter++;
-					break;
 				}
-				if(*format == 's'){
+				if (*format == 's'){
 					const char *str = va_arg(ap, const char*);
-					for(i = 0; str[i] != '\0'; i++){
+					if (str == NULL)
+						str = "(null)";
+					for (i = 0; str[i] != '\0'; i++){
 						_putchar(str[i]);
 						counter++;
-						break;
 					}
 				}
 			}
